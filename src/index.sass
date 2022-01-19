@@ -1,0 +1,2667 @@
+@import "normalize.css"
+@import "roboto.css"
+@import "../node_modules/nprogress/nprogress.css"
+
+html
+  --bg-color: #f2f2f2
+  --header-bg: #d9f5ff
+  --header-sidebar-toggler: #000
+  --header-logo-color: #000
+  --sidebar-bg: #f2f2f2
+  --entry-page-bg: #fff
+  --entry-bg: #fff
+  --dropdown-bg: #fff
+  --hover-item-bg: #f0f0f0
+  --active-item-bg: #fff
+  --branch-color: #e6e6e6
+  --branch-color-hovered: #4683d9
+  --highlight-block-color: #f5fcff
+  --rating-value-positive-bg: #eefbf3
+  --rating-value-neutral-bg: #5959591a
+  --rating-value-negative-bg: #fff1f1
+  --highlight-comment-bg-color: #f5fcff
+  --pinned-comment-bg-color: #f4f8fd
+  --donate-comment-bg-color: #f6f6f6
+  --box-shadow-highlight-comment: #fff
+  --self-author-highlight-color: #d9f5ffbf
+  --deactivated-button-text-color: #bbbbbb
+  --quote-text-color: #555555
+  --box-shadow-avatar: inset 0 0 0 1px #0000001a
+  --marked-text-color: #d9f5ffbf
+  --link-bb-color: #6997d880
+  --button-text-color: #fff
+  --button-default-bg-color: #fff
+  --button-second-bg-color: #4683d9
+  --button-deactive-second-bg-color: #a2c1ec
+  --blue-color: #3766a9
+  --blue-color-hovered: #0d7bcd
+  --light-blue-color: #4da0da
+  --green-color: #0a1
+  --red-color: #cd192e
+  --white-color: #fff
+  --black-color: #000
+  --grey-color: #595959
+  --light-grey-color: #f6f6f6
+  --warning-color: #fffbe7
+  --highlight-color: #f5fcff
+  --font: "Roboto", sans-serif
+  --box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.07), 0 4px 8px 0 rgba(0, 0, 0, 0.07)
+  --left-offset-branch: 25px
+  --header-notify-border-color: #f2f2f2
+  --form-bg-color: #f6f6f6
+  --form-box-shadow: 0 0 0 3px rgb(70 131 217 / 12%)
+  --form-border-color: 1px solid #bdd6fa
+  --form-active-border-color: 1px solid #4683d9
+  --input-bg: #fff
+  --input-login-bg: #f2f2f2
+  --nprogress-bar-color: #4da0da
+  --scrollbar-color: #d6d6d6
+  --scrollbar-thumb-color: #afafaf
+  --loader-bg-color: #fff
+
+html[data-theme='dark']
+  --bg-color: #161616
+  --header-bg: #101010
+  --header-sidebar-toggler: #f2f2f2
+  --sidebar-bg: #2f2f2f
+  --entry-page-bg: #1f1f1f
+  --entry-bg: #1f1f1f
+  --dropdown-bg: #2f2f2f
+  --hover-item-bg: #3f3f3f
+  --active-item-bg: #2f2f2f
+  --branch-color: #303030
+  --highlight-block-color: #252525
+  --rating-value-positive-bg: #468b6140
+  --rating-value-neutral-bg: #303030
+  --rating-value-negative-bg: #98484840
+  --highlight-comment-bg-color: #252525
+  --pinned-comment-bg-color: #222
+  --donate-comment-bg-color: #25252b
+  --box-shadow-highlight-comment: var(--entry-page-bg)
+  --self-author-highlight-color: #303030
+  --deactivated-button-text-color: #505050
+  --quote-text-color: #999999
+  --marked-text-color: #4f4f4f
+  --button-text-color: #aaa
+  --button-default-bg-color: #5f5f5f
+  --button-second-bg-color: #4683d9
+  --button-deactive-second-bg-color: #435e84
+  --box-shadow-avatar: inset 0 0 0 1px #ffffff1a
+  --blue-color: #6997d8
+  --black-color: #f2f2f2
+  --grey-color: #a0a0a0
+  --light-grey-color: #505050
+  --warning-color: #4f4f4f
+  --green-color: #5fb668
+  --red-color: #c2646d
+  --header-notify-border-color: #3d3d3d
+  --form-bg-color: #252525
+  --form-box-shadow: 0 0 0 3px rgb(70 131 217 / 20%)
+  --form-border-color: 1px solid #3f597c
+  --form-active-border-color: 1px solid #4e74a7
+  --form-hover-bg-color: #212121
+  --form-active-bg-color: #212121
+  --input-bg: #3f3f3f
+  --input-login-bg: #4f4f4f
+  --nprogress-bar-color: #5bbaff
+  --scrollbar-color: #5f5f5f
+  --scrollbar-thumb-color: #9f9f9f
+  --loader-bg-color: #3f3f3f
+
+#nprogress
+  .bar
+    height: 3px
+    background: var(--nprogress-bar-color)
+
+  .spinner
+    display: none
+
+*
+  box-sizing: border-box
+
+body
+  background: var(--bg-color)
+  font-family: var(--font)
+  overflow-y: scroll
+  -webkit-font-smoothing: antialiased
+
+h1
+  margin: 0
+
+h2
+  font-size: 1.75rem
+
+h3
+  font-size: 1.5rem
+
+h4
+  font-size: 1.25rem
+
+h2,
+h3,
+h4,
+h5,
+h6
+  margin: 30px 0 15px
+
+p
+  margin: 0
+  padding: 0
+
+a
+  text-decoration: none
+  color: inherit
+
+mark
+  color: var(--black-color)
+
+::-webkit-scrollbar
+  width: 8px
+  background: var(--scrollbar-color)
+
+::-webkit-scrollbar-thumb
+  background: var(--scrollbar-thumb-color)
+  border-radius: 10px
+
+#root
+  display: flex
+  flex-direction: column
+
+.content
+  display: flex
+
+.error
+  &__block
+    width: 100%
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+
+  &__body
+    display: flex
+    align-items: center
+
+    > svg
+      margin-right: 20px
+      width: 100px
+      height: 100px
+      stroke-width: 1.5
+      color: var(--grey-color)
+
+  &__body-title
+    margin-bottom: 10px
+    color: var(--black-color)
+
+  &__body-description
+    color: var(--black-color)
+
+.theme-toggle-moon
+  position: absolute
+  stroke-width: 2.25
+  transition: transform 0.3s, opacity 0.3s, visibility 0s 0.1s ease-out
+
+  &_active
+    opacity: 1
+    transform: rotate(0deg) scale(1)
+
+  &_deactive
+    opacity: 0
+    visibility: hidden
+    transform: rotate(90deg) scale(0.25)
+
+.theme-toggle-sun
+  stroke-width: 2.25
+  transition: transform 0.3s, opacity 0.3s, visibility 0s 0.1s ease-out
+
+  &_active
+    opacity: 1
+    transform: rotate(0deg) scale(1)
+
+  &_deactive
+    opacity: 0
+    visibility: hidden
+    transform: rotate(-90deg) scale(0.25)
+
+.img-wrapp
+  overflow: hidden
+
+  img
+    width: 100%
+    display: block
+
+.video-wrapp
+  position: relative
+  z-index: 1
+
+.video
+  position: absolute
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  cursor: pointer
+
+.header
+  top: 0
+  position: sticky
+  height: 60px
+  padding: 0 35px 0 20px
+  display: flex
+  align-items: center
+  grid-area: h
+  z-index: 2
+
+  &__sidebar-toggle
+    margin: 0 15px 0 0
+    color: var(--black-color)
+
+  &__logo
+    font-size: 2rem
+    font-weight: 900
+    color: var(--black-color)
+
+  &__profile-item
+    margin-left: auto
+    height: 100%
+    color: var(--black-color)
+    display: flex
+    align-items: center
+
+  &__dropdown-icon
+    margin: 0 0 0 7.5px
+    width: 18px
+    height: 18px
+    color: var(--black-color)
+    stroke-width: 2.25
+    cursor: pointer
+
+    &_show
+      animation: popup-show 0.12s
+
+    &_hidden
+      transition: visibility 0s 0.4s
+      animation: popup-show 0.12s reverse
+
+  &__dropdown
+    position: fixed
+    top: 60px
+    right: 20px
+    padding: 5px
+    width: 175px
+    justify-content: space-between
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px
+    border-radius: 4px
+    z-index: 1
+
+    &::before
+      content: ''
+      position: absolute
+      width: 10px
+      height: 10px
+      background: var(--dropdown-bg)
+      transform: rotate(45deg)
+      top: -5px
+      box-shadow: -1px -1px 0 0 rgba(0, 0, 0, 0.07)
+      right: 20.5px
+
+  &__dropdown-item
+    padding: 5px 15px
+    text-decoration: none
+    color: var(--black-color)
+    border-radius: 3px
+    user-select: none
+
+    &:not(:last-child)
+      margin-bottom: 5px
+
+    &:last-child
+      color: var(--red-color)
+
+  &_theme-white
+    background: var(--dropdown-bg)
+
+  &_theme-light-blue
+    background: var(--header-bg)
+
+  &__theme-toggle-wrapp
+    margin-right: 30px
+    display: flex
+    align-items: center
+
+  &__notify-popup-btn
+    position: relative
+    margin-right: 30px
+    height: 100%
+    display: flex
+    align-items: center
+
+  &__notify-body
+    position: absolute
+    top: 100%
+    right: -100%
+    width: 400px
+    background: var(--dropdown-bg)
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px
+
+    &::before
+      position: absolute
+      top: -5px
+      right: 8%
+      width: 10px
+      height: 10px
+      background: var(--dropdown-bg)
+      transform: rotate(45deg)
+      content: ''
+
+  &__notify-header
+    padding: 12px
+    text-align: center
+    font-size: 14px
+    font-weight: 500
+    border-bottom: 1px solid var(--header-notify-border-color)
+
+  &__notify-content
+    max-height: 465px
+    overflow-y: auto
+
+  &__notify-empty
+    padding: 15px 30px 30px
+    display: flex
+    flex-direction: column
+    align-items: center
+
+  &__notify-empty-icon
+    font-size: 32px
+
+  &__notify-empty-title
+    margin-top: 20px
+    font-weight: 500
+    text-align: center
+
+  &__notify-empty-description
+    margin-top: 10px
+    text-align: center
+
+  &__notify-item
+    position: relative
+    padding: 10px
+    display: flex
+    font-size: 15px
+    line-height: 21px
+    border-bottom: 1px solid var(--header-notify-border-color)
+
+  &__notify-item-link
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+  &__notify-item-img
+    position: relative
+    margin-right: 12px
+    width: 36px
+    height: 36px
+
+    img
+      width: inherit
+      height: inherit
+      border-radius: 4px
+      object-fit: cover
+
+  &__notify-item-img-icon
+    position: absolute
+    bottom: -5px
+    right: -5px
+    width: 16px
+    height: 16px
+    color: #fff
+    border-radius: 50%
+
+    &_positive
+      background: var(--green-color)
+
+    &_negative
+      background: var(--red-color)
+
+    &_reply
+      background: var(--light-blue-color)
+
+  &__notify-date-created
+    font-size: 14px
+    color: var(--grey-color)
+
+  &__notify-loader
+    height: 200px
+    display: flex
+    align-items: center
+    justify-content: center
+
+    svg
+      animation: notify-popup-loader 4s linear infinite
+
+  &__bell-btn
+    position: relative
+    display: flex
+    align-items: center
+
+    > svg
+      color: var(--black-color)
+      stroke-width: 2.25
+
+    &_pressed
+      transform: rotate(10deg)
+
+      .header__notifications-count
+        transform: rotate(-10deg)
+
+      > svg
+        color: var(--light-blue-color)
+
+  &__notifications-count
+    position: absolute
+    top: -35%
+    left: 50%
+    padding: 2px 4px
+    min-width: 17px
+    min-height: 17px
+    background: #e62e3b
+    color: white
+    text-align: center
+    font-size: 12px
+    border-radius: 4px
+
+.left-sidebar
+  position: sticky
+  top: 60px
+  padding: 10px
+  width: 220px
+  height: calc(100vh - 60px)
+  flex-shrink: 0
+
+  &_visibled
+    transform: translateX(0)
+
+  &_hidden
+    transform: translateX(-100%)
+
+  &__header
+    display: none
+
+  &__link
+    margin: 0 0 5px 0
+    padding: 0 13px
+    height: 44px
+    display: flex
+    align-items: center
+    color: var(--black-color)
+    text-decoration: none
+    user-select: none
+
+    &_active
+      background: var(--active-item-bg)
+      border-radius: 8px
+
+      & > svg
+        color: var(--light-blue-color)
+
+  &__link-logo
+    margin: 0 14px 0 0
+    width: 22px
+    height: 22px
+    color: var(--grey-color)
+
+    &_active
+      background: #fff
+      border-radius: 8px
+
+  &__link-badge
+    margin-left: auto
+    padding: 0 8px
+    height: 18px
+    background: #4683d9
+    color: #f2f2f2
+    border-radius: 100px
+    font-size: 12px
+    font-weight: 500
+    text-align: center
+    line-height: 18px
+
+  &__livebar-view-toggle
+    display: none
+
+  &__theme-toggle-wrapp
+    margin-left: auto
+    display: flex
+    align-items: center
+
+  &__theme-toggle
+    width: 28px
+    height: 28px
+    color: var(--black-color)
+
+.main
+  flex-grow: 1
+
+.right-sidebar
+  position: sticky
+  top: 60px
+  padding: 0 20px 20px 30px
+  width: 320px
+  height: calc(100vh - 60px)
+  display: flex
+  flex-direction: column
+  flex-shrink: 0
+  overflow-y: scroll
+  scrollbar-width: none
+
+  &_visibled
+    transform: translateX(0)
+
+  &_hidden
+    transform: translateX(-100%)
+
+  &::-webkit-scrollbar
+    width: 0
+
+  &__header
+    margin: 0 0 10px
+    position: sticky
+    top: 0
+    min-height: 75px
+    display: flex
+    align-items: center
+    background: var(--bg-color)
+    z-index: 1
+
+  &__header-label
+    color: var(--black-color)
+    font-size: 18px
+    line-height: 26px
+    font-weight: 500
+
+  &__header-pulse
+    width: 8px
+    height: 8px
+    margin: 0 0 0 10px
+    background: var(--red-color)
+    border-radius: 50%
+    animation: pulse 3.5s infinite
+
+  &__close-btn
+    display: none
+    margin: 0 0 0 auto
+    width: 26px
+    height: 26px
+
+  &__live-items
+    > div:not(:last-child)
+      margin-bottom: 25px
+
+  &__comment-item
+    line-height: 1.5rem
+
+  &__comment-item-header
+    margin-bottom: 6px
+    color: var(--black-color)
+    display: inline-flex
+    align-items: center
+
+  &__comment-item-avatar
+    width: 24px
+    height: 24px
+    background-position: 50% 50%
+    background-repeat: no-repeat
+    background-size: 100% auto
+    box-shadow: var(--box-shadow-avatar)
+
+    &_rounded
+      border-radius: 6px
+
+  &__comment-item-name
+    margin: 0 0 0 7.5px
+    max-width: 150px
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+    font-size: 14px
+    font-weight: 600
+
+  &__comment-item-content
+    margin-bottom: 6px
+    color: var(--black-color)
+    display: -webkit-box
+    -webkit-line-clamp: 4
+    -webkit-box-orient: vertical
+    overflow: hidden
+
+    a
+      color: var(--blue-color)
+      border-bottom: 1px solid var(--link-bb-color)
+
+  &__comment-item-footer
+    color: var(--black-color)
+    font-size: 14px
+    font-weight: 500
+    overflow: hidden
+    display: -webkit-box
+    line-height: 20px
+    word-break: break-word
+    -webkit-line-clamp: 1
+    -webkit-box-orient: vertical
+
+.entry
+  position: relative
+  margin-bottom: 30px
+  max-width: 640px
+  display: flex
+  flex-direction: column
+  background: var(--entry-bg)
+  border-radius: 8px
+
+  > a
+    position: absolute
+    width: 100%
+    height: 100%
+
+  &__repost
+    margin: 20px 20px 0 20px
+    display: flex
+    align-items: center
+    font-size: 15px
+    color: var(--grey-color)
+
+  &__repost-icon
+    margin: 0 10px 0 0
+    width: 18px
+    height: 18px
+
+  &__pinned-block
+    margin: 20px 20px 5px 20px
+    display: flex
+    align-items: center
+    font-size: 15px
+    color: var(--grey-color)
+
+  &__pinned-icon
+    margin: 0 10px 0 0
+    width: 18px
+    height: 18px
+
+  &__header-container
+    margin: 20px 20px 10px
+    display: flex
+    position: relative
+
+  &__header
+    display: flex
+    align-items: center
+
+  &__subsite-data
+    position: relative
+    display: flex
+    align-items: center
+    z-index: 1
+
+  &__subsite-avatar
+    width: 22.5px
+    height: 22.5px
+    border-radius: 5px
+    background-size: 100% auto
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.10)
+
+  &__subsite-name-link
+    max-width: 200px
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+
+  &__subsite-name
+    margin-left: 10px
+    color: var(--black-color)
+
+    &_bold
+      font-weight: 500
+
+  &__author-name
+    font-size: 15px
+
+    &_link
+      position: relative
+      margin-left: 20px
+      color: var(--black-color)
+      z-index: 1
+
+  &__date-publish
+    position: relative
+    margin-left: 20px
+    font-size: 15px
+    color: var(--grey-color)
+    cursor: default
+    z-index: 1
+
+  .main__title
+    margin: 0 20px
+    color: var(--black-color)
+    font-size: 22px
+    font-weight: 500
+    line-height: 1.75rem
+    display: block
+    word-break: break-word
+
+  .editor-title
+    white-space: nowrap
+
+  .title-authors-icon
+    margin: -4px 0 0 7px
+    vertical-align: middle
+    color: var(--light-blue-color)
+    stroke-width: 3
+
+  .main__subtitle
+    margin: 10px 20px 0
+    color: var(--black-color)
+    line-height: 1.5rem
+    word-break: break-word
+    display: block
+
+  .main__cover-video-container
+    margin: 15px 0 0
+    position: relative
+    padding-top: 56.2493%
+
+  .main__cover
+    margin-top: 15px
+
+    &_wide
+      width: 100%
+
+    &_thin
+      padding: 0 25px
+
+    &_vertical
+      padding: 0 25px
+
+      > div
+        margin: 0 auto
+        max-width: 55% !important
+
+    &_highlight
+      padding: 30px
+      background: var(--highlight-block-color)
+
+      > div
+        margin: 0 auto
+
+  .main__cover-video
+    position: absolute
+    height: 100%
+    width: 100%
+    left: 0
+    top: 0
+
+  &__footer
+    position: relative
+    padding: 20px
+    display: flex
+    z-index: 1
+
+    & > :not(:last-child)
+      margin-right: 25px
+
+  &__footer-comments-btn, &__footer-repost-btn, &__footer-bookmark-btn, &__footer-rating
+    display: flex
+    align-items: center
+
+  &__footer-rating
+    margin-left: auto
+
+  .comments__icon
+    color: var(--grey-color)
+    transform: scale(-1, 1)
+
+  .comments__count
+    margin: 0 0 0 5px
+    font-weight: 500
+    color: var(--grey-color)
+
+  .reposts__icon
+    color: var(--grey-color)
+
+  .reposts__count
+    margin: 0 0 0 7.5px
+    font-weight: 500
+    color: var(--grey-color)
+
+  .bookmarks__icon
+    color: var(--grey-color)
+
+  .bookmarks__count
+    margin: 0 0 0 5px
+    font-weight: 500
+    color: var(--grey-color)
+
+  .more__icon
+    margin: 0 0 0 auto
+    position: absolute
+    right: 0
+    color: #595959
+    background: #fff
+
+  .rating__dislike-icon
+    margin: 0 10px 0 0
+    color: var(--grey-color)
+    transform: scale(1.25)
+
+    &_pressed
+      background: rgba(211,79,87,.1)
+      border-radius: 50%
+      color: var(--red-color)
+
+  .rating__count
+    font-weight: 500
+
+    &_positive
+      color: var(--green-color)
+
+    &_neutral
+      color: var(--grey-color)
+
+    &_negative
+      color: var(--red-color)
+
+    &-enter
+      opacity: 0
+      transform: translateY(-5px)
+
+    &-enter-active
+      opacity: 1
+      transform: translateY(0)
+      transition: opacity 0.100s, transform 0.100s
+
+    &-exit
+      opacity: 1
+      transform: translateY(0)
+
+    &-exit-active
+      opacity: 0
+      transform: translateY(5px)
+      transition: opacity 0.100s, transform 0.100s
+
+  .rating__like-icon
+    margin: 0 0 0 10px
+    color: var(--grey-color)
+    transform: scale(1.25)
+
+    &_pressed
+      background-color: rgba(79,167,87,.1)
+      border-radius: 50%
+      color: var(--green-color)
+
+  .font-bold
+    font-weight: 500
+
+  .font-bolder
+    font-weight: 700
+
+.avatar
+  &__image
+    width: 40px
+    height: 40px
+    background-position: 50% 50%
+    background-repeat: no-repeat
+    background-size: cover
+    background-color: #d7d7d7
+    box-shadow: var(--box-shadow-avatar)
+
+  &_rounded
+    border-radius: 8px
+
+.profile
+  position: relative
+  padding: 20px 20px 0 20px
+  display: grid
+  border-radius: 0 0 8px 8px
+  grid-template-columns: 1fr
+  grid-template-areas: "profile-avatar" "profile-data"
+
+  &__wrapper
+    max-width: 960px
+    margin: 0 auto
+
+  &__cover-img
+    height: 280px
+    background-size: cover
+    background-position: 50% 0%
+    background-color: #d7d7d7
+    grid-area: profile-cover
+
+  &__cover-video
+    width: 100%
+    height: 280px
+    display: block
+    object-fit: cover
+    object-position: 50%
+
+  &__default-cover
+    width: 100%
+    height: 280px
+    background: #e4e4e4
+
+  &__avatar-buttons-container
+    display: flex
+    justify-content: space-between
+    grid-area: profile-avatar
+
+  &__avatar
+    width: 150px
+    height: 150px
+    box-shadow: 0 0 0 5px var(--entry-bg), inset 0 0 0 1px rgba(0,0,0,0.1)
+    border-radius: 10px
+    background-size: cover
+    background-color: #d7d7d7
+    background-position: 50% 50%
+
+  &__profile-data
+    margin-top: 15px
+    display: flex
+    flex-direction: column
+    overflow: hidden
+    white-space: nowrap
+    grid-area: profile-data
+
+    & > *:not(:last-child)
+      margin-bottom: 15px
+
+  &__name
+    color: var(--black-color)
+    font-size: 36px
+    font-weight: 700
+    text-overflow: ellipsis
+    overflow: hidden
+
+  &__counters
+    display: flex
+    align-items: center
+
+  &__rating-icon
+    margin: 0 10px 0 0
+    width: 22px
+    color: var(--grey-color)
+
+  &__rating
+    margin: 0 15px 0 0
+    display: inline-flex
+    align-items: center
+
+    &_fw-medium
+      font-weight: 500
+
+    &_theme-green
+      color: var(--green-color)
+
+    &_theme-grey
+      color: var(--grey-color)
+
+    &_theme-red
+      color: var(--red-color)
+
+  &__subs-count
+    display: inline-flex
+    align-items: center
+    color: var(--grey-color)
+
+  &__subs-count-icon
+    margin: 0 10px 0 0
+    width: 22px
+    color: var(--grey-color)
+
+  &__date-created
+    display: flex
+    align-items: center
+    color: var(--black-color)
+
+  &__buttons
+    grid-area: button
+    display: flex
+    grid-area: buttons
+
+    & > :not(:last-child)
+      margin: 0 10px 0 0
+
+    .subscribe-button
+      color: var(--white-color)
+
+    & button
+      width: 175px
+      border-radius: 5px
+
+  &__button-icon
+    margin: 0 10px 0 0
+    width: 22px
+    height: 22px
+
+  &__tabs
+    margin-top: 30px
+    display: flex
+
+  &__tab
+    height: 40px
+    color: var(--black-color)
+
+    &_active
+      height: 40px
+      color: var(--black-color)
+      border-bottom: 3.5px solid var(--blue-color)
+      font-weight: 500
+
+    &:not(:last-child)
+      margin-right: 15px
+
+  &__tab-count
+    margin-left: 5px
+    font-weight: normal
+    color: var(--grey-color)
+
+  &__error-block
+    width: 100%
+    height: 100%
+
+  &__entries-list
+    margin-top: 30px
+    max-width: 640px
+
+  &__entries-list-empty
+    max-width: 640px
+    height: 200px
+    background: var(--entry-bg)
+    color: var(--black-color)
+    border-radius: 8px
+    color: var(--grey-color)
+    text-align: center
+    line-height: 200px
+
+  &_theme-white
+    background: var(--entry-bg)
+
+.feed
+  &__sorting-buttons-container
+    padding: 10px 0 12px
+    width: 50%
+    margin: 0 0 0 auto
+    background: none
+
+  &__sorting-buttons
+    height: 35px
+    display: flex
+    justify-content: space-around
+    padding: 2px
+    background: var(--bg-color)
+    border-radius: 20px
+    position: relative
+
+    > a:not(:first-child)
+      margin: 0 0 0 10px
+
+  &__sorting-button
+    width: 50%
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: 20px
+    text-decoration: none
+    color: var(--grey-color)
+    user-select: none
+
+    &_active
+      color: var(--black-color)
+      background: var(--active-item-bg)
+      border-radius: 20px
+      font-weight: 500
+      box-shadow: 0px 1px 4px rgba(0, 0, 0, 15%)
+
+  &__sorting-button-popular-wrapp
+    width: 100%
+    height: 100%
+    display: flex
+    justify-content: center
+
+  &__sorting-button-popular
+    width: 100%
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+
+    & > svg
+      margin: 0 0 0 2.5px
+      width: 20px
+      height: 20px
+
+  &__dropdown
+    position: absolute
+    width: 50%
+    background: var(--dropdown-bg)
+    top: 100%
+    z-index: 1
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 15%)
+    border-radius: 10px
+    margin: 5px 0 0
+    z-index: 2
+
+    &-enter
+      opacity: 0
+      transform: translateY(-5px)
+
+    &-enter-active
+      opacity: 1
+      transform: translateY(0)
+      transition: opacity 100ms, transform 100ms
+
+    &-exit
+      opacity: 1
+
+    &-exit-active
+      opacity: 0
+      transform: translateY(-5px)
+      transition: opacity 100ms, transform 100ms
+
+    & > a
+      margin: 5px
+      padding: 10px 15px
+      display: flex
+      text-decoration: none
+      color: var(--black-color)
+      align-items: center
+      cursor: pointer
+
+  &__loader
+    position: sticky
+    bottom: 20px
+    margin: 0 auto
+    padding: 5px
+    display: flex
+    width: min-content
+    background: var(--loader-bg-color)
+    box-shadow: var(--box-shadow)
+    border-radius: 50%
+    z-index: 1
+
+    > svg
+      color: var(--black-color)
+      animation: notify-popup-loader 2s infinite
+
+.entry-page
+  margin: 0 auto
+  background: var(--entry-page-bg)
+  max-width: 1020px
+  height: 100%
+  border-radius: 0
+
+  ul
+    li
+      margin: 10px 0
+      word-break: break-word
+
+  h1, h2, h3, h4, h5, h6
+    a
+      color: var(--blue-color)
+      border-bottom: 1px solid var(--link-bb-color)
+
+  p
+    & + .entry-page__comment-text-quote
+      margin: 5px 0
+
+    & + .entry-page__comment-text-quote:last-child
+      margin: 5px 0 0
+
+  &__content-info
+    margin: 30px auto
+    width: 680px
+    display: flex
+    align-items: center
+
+  &__content-info-item
+    display: flex
+    align-items: center
+    color: var(--grey-color)
+
+    &:not(:last-child)
+      margin-right: 32px
+
+    svg
+      stroke-width: 2
+
+    span
+      margin-left: 5px
+      font-weight: 500
+
+  &__text-block, &__comment-text, &__warning-block, &__list-block
+    a
+      color: var(--blue-color)
+      border-bottom: 1px solid var(--link-bb-color)
+
+  &__text-block
+    width: 680px
+    color: var(--black-color)
+    margin: 15px auto
+    display: block
+    font-size: 18px
+    word-break: break-word
+    line-height: 1.8rem
+
+    &_marked
+      padding: 2px
+      background: var(--marked-text-color)
+
+    &_italic
+      font-style: italic
+
+  &__list-block
+    width: 680px
+    color: var(--black-color)
+    margin: 15px auto
+    display: block
+    font-size: 18px
+    word-break: break-word
+    line-height: 1.8rem
+
+  &__header-block
+    margin: 0 auto
+    width: 680px
+    color: var(--black-color)
+    word-break: break-word
+
+  &__img
+    width: 100%
+    display: block
+
+  &__img-block, &__video-block
+    margin: 30px auto
+    width: 680px
+
+    &_highlight
+      padding: 30px
+      background: var(--highlight-block-color)
+
+      > div
+        margin: 0 auto
+
+    &_vertical
+      > div
+        margin: 0 auto
+        max-width: 55% !important
+
+    &_wide
+      width: 100%
+
+  &__img-title
+    margin: 15px auto
+    max-width: 680px
+    display: block
+    font-size: 15px
+    color: var(--black-color)
+    word-break: break-word
+    line-height: 1.5rem
+
+  &__warning-block
+    margin: 0 auto 30px
+    padding: 25px
+    max-width: 680px
+    font-size: 18px
+    background: var(--warning-color)
+    color: var(--black-color)
+    line-height: 1.8rem
+
+  &__header-container
+    margin: 35px auto 15px auto
+    width: 680px
+
+  &__main-title
+    margin: 15px auto
+    width: 680px
+    color: var(--black-color)
+    font-size: 36px
+    font-weight: 500
+    line-height: 1.3em
+    word-break: break-word
+
+  &__editor-title-icon
+    margin: 0 0 0 6px
+    vertical-align: middle
+    color: #4da0da
+    stroke-width: 3
+
+  &__comments
+    margin: 0 auto 30px
+    width: 680px
+    display: flex
+    flex-direction: column
+
+  &__comments-header
+    margin: 30px 0
+    display: flex
+    align-items: center
+
+  &__reply-form-header
+    margin-bottom: 30px
+
+  &__comments-header-label
+    color: var(--black-color)
+    font-size: 18px
+    font-weight: 600
+
+  &__comments-sort-btn-wrapp
+    position: relative
+    margin-left: 15px
+
+  &__comments-sort-btn
+    color: var(--black-color)
+    border-radius: 20px
+
+    > span
+      display: flex
+      align-items: center
+
+      > svg
+        margin-left: 2.5px
+        width: 18px
+
+  &__comments-sort-dropdown
+    position: absolute
+    width: 100%
+    display: flex
+    justify-content: center
+    flex-direction: column
+
+  &__comments-sort-dropdown-item
+    display: flex
+    justify-content: center
+
+  &__comment
+    &_mb-over-lvl
+      &:not(:last-child)
+        margin-bottom: 25px !important
+
+    &:not(:last-child)
+      margin-bottom: 30px
+
+  &__comment-parent
+    position: relative
+
+    &_highlighted
+      z-index: 1
+
+      &::before
+        position: absolute
+        padding: 8px 24px
+        top: -8px
+        right: -24px
+        width: 100%
+        height: 100%
+        content: ""
+        background: var(--highlight-comment-bg-color)
+        border-radius: 6px
+        box-shadow: 0 0 0 8.25px var(--box-shadow-highlight-comment)
+        z-index: -1
+
+    &_pinned
+      z-index: 1
+
+      &::before
+        position: absolute
+        padding: 8px 24px
+        top: -8px
+        right: -24px
+        width: 100%
+        height: 100%
+        content: ""
+        background: var(--pinned-comment-bg-color)
+        border-radius: 6px
+        z-index: -1
+
+    &_with-donate
+      z-index: 1
+
+      &::before
+        position: absolute
+        padding: 8px 24px
+        top: -8px
+        right: -24px
+        width: 100%
+        height: 100%
+        content: ""
+        background: var(--donate-comment-bg-color)
+        border-radius: 6px
+        z-index: -1
+
+    &:not(:last-child)
+      margin-bottom: 25px
+
+  &__comment-self
+    display: flex
+    flex-wrap: wrap
+    opacity: 1
+    transition: opacity 0.15s
+
+    &_muted
+      opacity: 0.5
+
+    &:not(:last-child)
+      margin-bottom: 25px
+
+  &__comment-header
+    display: inline-flex
+    align-items: center
+    color: var(--black-color)
+    order: -2
+
+  &__comment-header-data
+    margin-left: 10px
+
+  &__comment-header-additional
+    display: flex
+    align-items: center
+
+  &__comment-author-avatar
+    position: relative
+    width: 32px
+    height: 32px
+    background-size: cover
+    background-position: 50%
+    border-radius: 50%
+    box-shadow: var(--box-shadow-avatar)
+
+    &_online
+      &::after
+        position: absolute
+        bottom: 0
+        right: 0
+        content: ""
+        display: block
+        width: 8px
+        height: 8px
+        background: var(--green-color)
+        border-radius: 50%
+        box-shadow: 0 0 0 1.5px var(--entry-page-bg)
+
+  &__comment-author-name-wrapp
+    margin-bottom: 2px
+    display: flex
+    align-items: center
+
+  &__comment-author-name
+    max-width: 240px
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+    font-weight: 500
+
+    &_self-author
+      padding: 1px 0
+      border-radius: 2px
+      background: var(--self-author-highlight-color)
+
+  &__comment-date-publish
+    font-size: 12px
+    color: var(--grey-color)
+    cursor: default
+
+  &__is-edited
+    margin-left: 5px
+    display: flex
+    align-items: center
+    color: var(--grey-color)
+
+    > svg
+      width: 13px
+      height: 13px
+
+  &__comment-pinned-icon-wrapp
+    margin-left: 10px
+    display: flex
+    align-items: center
+
+  &__comment-pinned-icon
+    width: 14px
+    height: 14px
+    color: var(--grey-color)
+
+  &__reply-to
+    margin-left: 15px
+    display: flex
+    align-items: center
+    opacity: 0
+
+  &__reply-to-icon
+    width: 14px
+    height: 14px
+    stroke-width: 2.5
+    color: var(--grey-color)
+
+  &__comment-content
+    margin: 7.5px 0
+    padding-right: 85px
+    width: 100%
+    line-height: 25px
+
+  &__comment-donate
+    margin-top: 8px
+    display: flex
+    align-items: center
+
+  &__comment-donate-mark
+    padding: 0 12px
+    height: 28px
+    line-height: 29px
+    background-color: #447
+    border-radius: 5px
+    color: #fff
+    box-shadow: 0 1px 2px rgb(68 68 119 / 28%), inset 0 -1px 0 rgb(0 0 0 / 12%)
+    font-size: 14px
+
+  &__comment-text
+    display: inline-block
+    color: var(--black-color)
+    word-break: break-word
+
+    &_deleted
+      color: var(--grey-color)
+
+    p:not(:last-child)
+      margin-bottom: 5px
+
+  &__comment-media
+    margin: 5px 0
+    max-width: 400px
+
+    &:not(:first-child)
+      margin-top: 10px
+
+    .img-wrapp
+      &:not(:last-child)
+        margin-bottom: 5px
+
+  &__comment-text-quote
+    margin-bottom: 5px
+    display: inline-flex
+    word-break: break-word
+
+  &__comment-text-quote-icon
+    margin-right: 10px
+    flex-shrink: 0
+
+  &__reply-button
+    display: flex
+    align-items: center
+
+  &__reply-button-label
+    font-size: 14px
+    color: var(--grey-color)
+    user-select: none
+
+  &__reply-form
+    padding: 12px
+    width: 100%
+    min-height: 125px
+    background: var(--form-bg-color)
+    border: 1px solid var(--branch-color)
+    border-radius: 10px
+    order: 2
+    transition: background 0.1s, border 0.1s, box-shadow 0.1s
+
+    &:hover
+      background: var(--form-hover-bg-color)
+      border: var(--form-border-color)
+      box-shadow: var(--form-box-shadow)
+
+      .entry-page__reply-text-field
+        background: var(--form-hover-bg-color)
+
+    &_active
+      background: var(--form-active-bg-color)
+      border: var(--form-active-border-color) !important
+      box-shadow: var(--form-box-shadow)
+
+    &:not(:last-child)
+      margin-bottom: 25px
+
+  &__reply-text-field
+    padding: 0 4px 40px
+    width: 100%
+    display: block
+    background: var(--form-bg-color)
+    overflow-y: hidden
+    color: var(--black-color)
+    line-height: 25px
+    resize: none
+    border: none
+    transition: background 0.1s
+
+    &_active
+      background: var(--form-active-bg-color)
+
+    &:focus
+      outline: none
+
+    &::placeholder
+      color: var(--grey-color)
+
+  &__reply-form-action-buttons
+    margin-top: 15px
+    display: flex
+    align-items: center
+    justify-content: flex-end
+
+  &__reply-form-cancel-btn
+    margin-right: 15px
+    color: var(--grey-color)
+    user-select: none
+
+  &__reply-form-button
+    color: var(--white-color)
+    border-radius: 8px
+
+    svg
+      width: 18px
+      height: 18px
+
+  &__comment-rating-wrapp
+    margin-left: auto
+    display: flex
+    align-items: flex-start
+    order: -1
+
+  &__comment-rating
+    display: flex
+    align-items: center
+    line-height: 20px
+
+    &_hidden
+      display: none
+
+  &__comment-rating-value-wrapp
+    position: relative
+    margin: 0 7.5px
+    padding: 0 12.5px
+    min-width: 40px
+    display: flex
+    flex-direction: column
+    align-items: center
+    border-radius: 4px
+    cursor: default
+
+    &_positive
+      background: var(--rating-value-positive-bg)
+
+    &_neutral
+      background: var(--rating-value-neutral-bg)
+
+    &_negative
+      background: var(--rating-value-negative-bg)
+
+  &__comment-rating-value
+    font-weight: 500
+    font-size: 14px
+
+    &_positive
+      color: var(--green-color)
+
+    &_neutral
+      color: var(--grey-color)
+
+    &_negative
+      color: var(--red-color)
+
+    &-enter
+      opacity: 0
+      transform: translateY(-5px)
+
+    &-enter-active
+      opacity: 1
+      transform: translateY(0)
+      transition: opacity 0.100s, transform 0.100s
+
+    &-exit
+      opacity: 1
+      transform: translateY(0)
+
+    &-exit-active
+      opacity: 0
+      transform: translateY(5px)
+      transition: opacity 0.100s, transform 0.100s
+
+  &__comment-likes-popup
+    position: absolute
+    top: 100%
+    margin-top: 5px
+    padding: 5px
+    width: 200px
+    max-height: 275px
+    border-radius: 6px
+    background: var(--dropdown-bg)
+    box-shadow: var(--box-shadow)
+    overflow-y: scroll
+    scrollbar-width: none
+    z-index: 2
+
+    &-enter
+      opacity: 0
+      transform: translateY(-5px)
+
+    &-enter-active
+      opacity: 1
+      transform: translateY(0)
+      transition: opacity 100ms, transform 100ms
+
+    &-exit
+      opacity: 1
+
+    &-exit-active
+      opacity: 0
+      transform: translateY(-5px)
+      transition: opacity 100ms, transform 100ms
+
+    &::-webkit-scrollbar
+      width: 0
+
+  &__comment-likes-popup-item
+    padding: 7.5px
+    display: flex
+    align-items: center
+    border-radius: 5px
+
+    &:not(:last-child)
+      margin-bottom: 2.5px
+
+  &__comment-likes-popup-item-avatar
+    min-width: 22.5px
+    min-height: 22.5px
+    background-position: 50% 50%
+    background-repeat: no-repeat
+    background-size: cover
+    box-shadow: var(--box-shadow-avatar)
+    border-radius: 6px
+
+  &__comment-likes-popup-item-nickname
+    margin-left: 7.5px
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+
+    &_positive
+      color: var(--green-color)
+
+    &_negative
+      color: var(--red-color)
+
+  &__comment-voting-dislike-button, &__comment-voting-like-button
+    color: var(--grey-color)
+    opacity: 0
+
+    &_pressed
+      opacity: 1
+
+    &_hidden
+      opacity: 0
+
+  &__comment-voting-dislike-button
+    &_pressed
+      color: var(--red-color)
+
+  &__comment-voting-like-button
+    &_pressed
+      color: var(--green-color)
+
+  &__comment-childrens
+    position: relative
+
+  &__comment-child
+    > .entry-page__comment:not(:last-child)
+      margin-bottom: 25px
+
+    &_indent
+      padding-left: 25px
+
+    &_collapsed
+      height: 0
+      overflow: hidden
+
+  &__collapse-button
+    position: absolute
+    width: 25px
+    height: 100%
+    box-shadow: inset 1px 0 0 var(--branch-color)
+
+    &_hidden
+      display: none
+
+  &__expand-button
+    color: var(--blue-color)
+
+    &_hidden
+      display: none
+
+  &__error-block
+    width: 100%
+    height: 100%
+
+.feed-page
+  margin: 0 auto
+  width: 640px
+
+.button
+  border: none
+  display: flex
+  align-items: center
+  justify-content: center
+  cursor: pointer
+  font-family: var(--font)
+
+  &:focus-visible
+    outline: none
+
+  &__icon
+    margin: 0 10px 0 0
+
+  &_theme-default
+    background: var(--button-default-bg-color)
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), inset 0 0 0 1px rgba(0, 0, 0, 0.06), inset 0 -1px 0 rgba(0, 0, 0, 0.012), inset 1px 0 0 rgba(0, 0, 0, 0.06), inset -1px 0 0 rgba(0, 0, 0, 0.06)
+
+    &:active:enabled
+      background: #dbdbdb
+
+    &:disabled
+      color: #9f9f9f
+      cursor: not-allowed
+
+  &_theme-second
+    background: var(--button-second-bg-color)
+    box-shadow: 0 1px 2px rgba(70, 131, 217, 0.48), inset 0 -1px 0 rgba(0, 0, 0, 0.12)
+
+    &:disabled
+      color: var(--button-text-color)
+      background: var(--button-deactive-second-bg-color)
+      cursor: not-allowed
+
+    &:active:enabled
+      background: #2a6dcb
+
+  &_size-small
+    padding: 2.5px 5px
+
+  &_size-middle
+    padding: 5px 15px
+    height: 35px
+
+  &_size-large
+    padding: 10px 20px
+
+  &_text-white
+    color: #fff
+
+  &_text-bold
+    font-weight: 500
+
+  &_font-size-small
+    font-size: 14px
+
+  &_font-size-normal
+    font-size: 16px
+
+  &_font-size-large
+    font-size: 18px
+
+  &_disabled
+    &:disabled
+      cursor: not-allowed
+      background-color: #f1f1f1
+
+.dropdown
+  display: flex
+  flex-direction: column
+  box-shadow: var(--box-shadow)
+  z-index: 2
+
+  &-enter
+    opacity: 0
+    transform: translateY(-5px)
+
+  &-enter-active
+    opacity: 1
+    transform: translateY(0)
+    transition: opacity 100ms, transform 100ms
+
+  &-exit
+    opacity: 1
+
+  &-exit-active
+    opacity: 0
+    transform: translateY(-5px)
+    transition: opacity 100ms, transform 100ms
+
+  &__item
+    display: flex
+    align-items: center
+    cursor: pointer
+    font-size: 14px
+    font-weight: 500
+
+  &__item-icon
+    width: 20px
+    margin: 0 10px 0 0
+
+.login-wrapper
+  position: fixed
+  top: 0
+  width: 100%
+  height: 100%
+  display: flex
+  align-items: center
+  justify-content: center
+  background: rgba(0, 0, 0, 0.75)
+  z-index: 2
+  transition: opacity 0.2s
+  visibility: visible
+  opacity: 1
+
+  &_hidden
+    transition: opacity 0.2s, visibility 0.2s
+    visibility: hidden
+    opacity: 0
+
+  &__login-body
+    width: 450px
+    display: flex
+    flex-direction: column
+    background: var(--entry-page-bg)
+    border-radius: 5px
+
+  &__login-body-title
+    margin-bottom: 30px
+    color: var(--black-color)
+    text-align: center
+
+  &__form
+    padding: 0 40px 40px
+    display: flex
+    flex-direction: column
+
+    & > *
+      &:not(:last-child)
+        margin-bottom: 10px
+
+    input
+      padding: 12px
+      background: var(--input-login-bg)
+      color: var(--black-color)
+      border: none
+
+      &::placeholder
+        color: var(--grey-color)
+
+      &:-webkit-autofill
+        background-color: var(--input-login-bg)
+
+  &__remember-me-wrapp
+    display: flex
+    align-items: center
+
+  &__remember-me-label
+    margin-left: 7px
+    color: var(--black-color)
+
+  &__login-btn
+    color: #fff
+
+  &__login-body-close-btn
+    color: var(--black-color)
+    align-self: flex-end
+    margin: 15px 15px 0 0
+    cursor: pointer
+
+@media (hover: hover)
+  .header
+    &__dropdown
+      > *
+        &:hover
+          position: relative
+          background: var(--hover-item-bg)
+          z-index: 1
+
+    &__dropdown-icon
+      &:hover
+        color: var(--grey-color)
+
+    &__theme-toggle-wrapp
+      cursor: pointer
+
+      & svg
+        &:hover
+          color: var(--light-blue-color)
+
+    &__bell-btn
+      svg
+        &:hover
+          color: var(--light-blue-color)
+
+    &__bell-btn
+      cursor: pointer
+
+    &__notify-item
+      &:hover
+        background: var(--hover-item-bg)
+
+    &__login-btn
+      &:hover
+        color: var(--light-blue-color)
+        cursor: pointer
+
+  .left-sidebar
+    &__link
+      &:hover
+        background: var(--active-item-bg)
+        border-radius: 8px
+
+  .right-sidebar
+    &__comment-item-header
+      &:hover
+        color: var(--blue-color)
+
+    &__comment-item-content
+      a
+        &:hover
+          color: var(--red-color)
+          border-bottom: 1px solid #ffffff80
+
+    &__comment-item-footer
+      &:hover
+        color: var(--blue-color)
+
+  .entry
+    &__subsite-data
+      &:hover
+        .entry__subsite-name-link
+          .entry__subsite-name
+            color: var(--blue-color)
+
+        .entry__subsite-name
+          color: var(--blue-color)
+
+    &__author-name
+      &:hover
+        color: var(--blue-color)
+
+    .rating__like-icon, .rating__dislike-icon
+      &:hover
+        cursor: pointer
+        background: var(--hover-item-bg)
+        border-radius: 50%
+
+  .button
+    &_theme-default
+      &:hover:enabled
+        background: #ededed
+
+    &_theme-second
+      &:hover:enabled
+        background: #3477d5
+
+  .feed
+    &__sorting-button
+      &:hover
+        background: var(--active-item-bg)
+
+    &__dropdown
+      > a:hover
+        border-radius: 8px
+        background: var(--hover-item-bg)
+
+  .entry-page
+    h1, h2, h3, h4, h5, h6
+      a
+        &:hover
+          color: var(--red-color)
+          border-bottom: 1px solid #c2646d80
+
+    &__comment-self
+      &:hover
+        .entry-page__reply-to, .entry-page__comment-voting-dislike-button, .entry-page__comment-voting-like-button
+          opacity: 1
+          cursor: pointer
+
+      .entry-page__comment-rating-value-wrapp
+        &:hover
+          &::before
+            content: ''
+            position: absolute
+            top: 0
+            width: 35px
+            height: 30px
+
+    &__content-info-item
+      &:hover
+        color: var(--blue-color)
+        cursor: pointer
+
+    &__comment-author-avatar
+      &:hover
+        & ~ .entry-page__comment-header-data
+          .entry-page__comment-author-name
+            color: var(--blue-color)
+
+    &__comment-author-name
+      &:hover
+        color: var(--blue-color)
+
+    &__author-name
+      &:hover
+        color: var(--blue-color)
+
+    &__text-block, &__comment-text, &__warning-block, &__list-block
+      a
+        &:hover
+          color: var(--red-color)
+          border-bottom: 1px solid #c2646d80
+
+    &__comment-text-mention
+      &:hover
+        color: var(--red-color)
+        border-bottom: 1px solid #c2646d80
+
+    &__reply-to-icon
+      &:hover
+        color: var(--blue-color)
+
+    &__reply-button-label
+      &:hover
+        cursor: pointer
+        color: var(--blue-color)
+
+    &__reply-form-cancel-btn
+      &:hover
+        cursor: pointer
+
+    &__comment-voting-dislike-button
+      &:hover
+        color: var(--red-color)
+
+    &__comment-voting-like-button
+      &:hover
+        color: var(--green-color)
+
+    &__collapse-button
+      &:hover
+        cursor: pointer
+        box-shadow: inset 1.5px 0 0 var(--branch-color-hovered)
+
+    &__expand-button
+      &:hover
+        cursor: pointer
+        color: var(--red-color)
+
+    &__comment-likes-popup-item
+      &:hover
+        cursor: pointer
+        background: var(--hover-item-bg)
+
+  .login-wrapper
+    &__login-body-close-btn
+      &:hover
+        color: #fff
+
+@media (max-width: 768px)
+  .header
+    padding: 0 15px
+
+    &__logo
+      font-size: 1.75rem
+
+    &__theme-toggle-wrapp
+      display: none
+
+    &__dropdown
+      right: 10px
+
+      &::before
+        right: 19px
+
+    &__notify-popup-btn
+      position: static
+      margin-right: 20px
+
+    &__notify-body
+      right: 0
+      width: 100%
+
+      &::before
+        right: 20.5%
+
+  .login-wrapper
+    padding: 0 15px
+
+    &__form
+      padding: 0 30px 30px
+
+  .main
+    margin: 0
+
+  .profile
+    padding: 15px 15px 0 15px
+    border-radius: 0px
+
+    &__default-cover
+      height: 150px
+
+    &__wrapper
+      width: unset
+      margin: 0
+
+    &__cover-img
+      max-height: 150px
+
+    &__cover-video
+      max-height: 150px
+
+    &__avatar
+      width: 100px
+      height: 100px
+
+    &__name
+      font-size: 1.5rem
+
+    &__sorting-entries
+      padding: 0 15px
+
+    &__buttons
+      & > button
+        width: unset
+
+      & > :not(:last-child)
+        & svg
+          margin: 0
+
+        & span
+          display: none
+
+      & > :not(:first-child)
+        & svg
+          display: none
+
+    &__entries-list-empty
+      border-radius: 0
+
+  .left-sidebar
+    position: fixed
+    top: 0
+    padding: 0
+    width: 100%
+    height: 100%
+    background: rgba(0, 0, 0, 0.5)
+    z-index: 2
+    transition: transform 0.1s, background 0.1s 0.1s ease
+
+    &_visibled
+      transform: translateX(0)
+
+    &_hidden
+      transform: translateX(-100%)
+      background: rgba(0, 0, 0, 0.0)
+      transition: transform 0.1s 0.1s, background 0.1s ease
+
+    &__link
+      height: 48px
+      font-size: 18px
+
+    &__livebar-view-toggle
+      display: flex
+
+    &__body
+      width: 80%
+      height: 100%
+      background: var(--sidebar-bg)
+
+    &__header
+      position: relative
+      padding: 15px
+      height: 60px
+      display: flex
+      align-items: center
+
+    &__toggle
+      margin: 0 15px 0 0
+      color: var(--black-color)
+
+    &__header-logo
+      color: var(--black-color)
+      font-size: 1.75rem
+      font-weight: 900
+
+    &__main
+      padding: 10px
+
+    &__theme-toggle-moon
+      position: absolute
+      width: 35px
+      height: 35px
+      right: 15px
+      color: var(--black-color)
+      margin-left: auto
+
+    &__theme-toggle-sun
+      position: absolute
+      width: 35px
+      height: 35px
+      right: 15px
+      color: var(--black-color)
+      margin-left: auto
+
+  .right-sidebar
+    position: fixed
+    width: 100%
+    padding: 0 15px 15px
+    background: var(--bg-color)
+    transition: transform 0.2s ease
+    z-index: 1
+
+    &_visibled
+      transform: translateY(0)
+
+    &_hidden
+      transform: translateY(-100%)
+
+    &__collapse-btn
+      display: none
+
+    &__close-btn
+      display: block
+      color: var(--black-color)
+
+  .entry
+    border-radius: 0
+
+    &__repost
+      margin: 15px 15px 5px
+
+    &__header-container
+      margin: 15px
+
+    &__author-name
+      white-space: nowrap
+      max-width: 125px
+      overflow: hidden
+      text-overflow: ellipsis
+
+      &_link
+        margin-left: 15px
+        max-width: 130px
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+
+    &__pinned-block
+      margin: 15px 15px 5px 15px
+
+    &__subsite-name
+      max-width: 75px
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+
+    &__date-publish
+      margin-left: 15px
+      white-space: nowrap
+      max-width: 100px
+      overflow: hidden
+      text-overflow: ellipsis
+
+    .main__title
+      margin: 0 15px
+
+    .main__subtitle
+      margin: 10px 15px 0
+
+    .main__cover_vertical
+      width: 100%
+
+      > div
+        max-width: 85% !important
+
+    &__footer
+      padding: 15px
+
+      & > :not(:last-child)
+        margin-right: 20px
+
+  .feed
+    &__sorting-buttons-container
+      padding: 16px 12px 12px
+      width: unset
+      background: var(--entry-bg)
+
+    &__sorting-buttons
+      > a:not(:first-child)
+        margin: 0
+
+    .subsite__name
+      white-space: nowrap
+      max-width: 100px
+      overflow: hidden
+      text-overflow: ellipsis
+
+    .entry-author
+      white-space: nowrap
+      max-width: 125px
+      overflow: hidden
+      text-overflow: ellipsis
+
+    .entry-date-publish
+      white-space: nowrap
+      max-width: 100px
+      overflow: hidden
+      text-overflow: ellipsis
+
+  .avatar
+    &__image
+      width: 35px
+      height: 35px
+
+    .subsite-data
+      max-width: 175px
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
+
+    .subsite-name
+      max-width: 100px
+      white-space: nowrap
+      text-overflow: ellipsis
+      overflow: hidden
+
+    .entry-author
+      overflow: hidden
+      text-overflow: ellipsis
+      max-width: 125px
+      white-space: nowrap
+
+  .feed-page
+    width: unset
+
+  .entry-page
+    width: 100%
+
+    &__header-container
+      margin: 15px
+      width: unset
+
+    &__main-title
+      margin: 0 15px
+      width: unset
+      font-size: 28px
+      line-height: 2.25rem
+
+    &__content-info
+      margin: 15px
+      width: unset
+
+    &__content-info-item
+      &:not(:last-child)
+        margin-right: 24px
+
+    &__img-cover
+      margin: 15px 0
+      width: 100%
+
+    &__img-block, &__video-block
+      width: unset
+
+      &_highlight
+        padding: 15px
+
+    &__img-title
+      margin: 20px 15px
+
+    &__warning-block
+      padding: 15px
+
+    &__text-block
+      margin: 10px 15px
+      width: unset
+
+    &__list-block
+      padding: 0 15px 0 40px
+      width: unset
+
+    &__header-block
+      margin: 15px
+      width: unset
+
+    &__comments
+      margin: 15px
+      width: unset
+
+    &__comment
+      &:not(:last-child)
+        margin-bottom: 25px
+
+      &_mb-over-lvl:not(:last-child)
+        margin-bottom: 20px !important
+
+    &__comments-header
+      margin-bottom: 25px
+
+    &__reply-to
+      opacity: 1
+
+    &__comment-parent
+      &::before
+        position: absolute
+        padding: 8px 0
+        right: -15px
+        bottom: 8px
+        width: 100vh
+        box-shadow: 0 0 0 6px var(--entry-page-bg)
+        border-radius: 0
+
+      &:not(:last-child)
+        margin-bottom: 20px
+
+    &__comment-author-name
+      max-width: 190px
+
+    &__comment-content
+      margin: 5px 0
+      padding-right: 0
+
+    &__comment-media
+      &:not(:first-child)
+        margin-top: 5px
+
+    &__comment-text-quote
+      &:first-child
+        margin: 5px 0
+
+      &:last-child
+        margin: 0
+
+    &__reply-form
+      padding: 10px
+      min-height: 100px
+
+    &__reply-text-field
+      padding-bottom: 20px
+
+    &__reply-form-cancel-btn
+      width: 20px
+      height: 20px
+
+    &__comment-voting-dislike-button, &__comment-voting-like-button
+      opacity: 1
+
+    &__comment-rating-wrapp
+      order: 1
+
+    &__comment-rating-value-wrapp
+      padding: 0 7.5px
+      background: none
+
+      &_hovered
+        &::before
+          width: 0
+          height: 0
+
+    &__comment-likes-popup
+      right: -34px
+
+    &__comment-child
+      div .entry-page__comment:not(:last-child)
+        margin-bottom: 20px
+
+      &_indent
+        padding-left: 20px
+
+    &__collapse-button
+      width: 20px
+
+  @media (orientation: landscape)
+    .left-sidebar
+      &__body
+        width: 300px
+
+    .right-sidebar
+      &__header, &__live-items
+        margin: 0 auto
+        width: 500px
+
+    .entry
+      border-radius: 8px
+
+    .profile
+      border-radius: 0 0 8px 8px
+
+      &__wrapper
+        margin: 0 auto
+        width: 100%
+        max-width: 640px
+
+@media (min-width: 768px) and (max-width: 1301px)
+  .right-sidebar
+    display: none
+
+  .entry-page
+    max-width: unset
+
+@keyframes pulse
+  0%
+    box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7)
+
+  50%
+    box-shadow: 0 0 0 5px rgba(255, 82, 82, 0)
+
+  100%
+    box-shadow: 0 0 0 0 rgba(255, 82, 82, 0)
+
+@keyframes notify-popup-loader
+  100%
+    transform: rotate(360deg)
