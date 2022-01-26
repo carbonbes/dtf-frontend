@@ -7,9 +7,11 @@ import LeftSidebarContext from "../contexts/LeftSidebarContext";
 import { useMediaQuery } from "react-responsive";
 import RightSidebarContext from "../contexts/RightSidebarContext";
 import { useSelector } from "react-redux";
+import useScrollBlocked from "../hooks/useScrollBlocked";
 
 const LeftSidebar = (props) => {
-  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const isMobile = useMediaQuery({ maxWidth: 859 });
+  const isTablet = useMediaQuery({ maxWidth: 950 });
 
   const { leftSidebarVisible, setLeftSidebarVisible } =
     useContext(LeftSidebarContext);
@@ -18,16 +20,41 @@ const LeftSidebar = (props) => {
 
   const newEntryCount = useSelector((state) => state.feed.newEntries);
 
+  const { setIsScrollBlocked } = useScrollBlocked({ isMobile });
+
   const leftSidebarRef = useRef();
 
-  useDetectOutsideClick(leftSidebarRef, setLeftSidebarVisible);
+  useDetectOutsideClick(
+    leftSidebarRef,
+    setLeftSidebarVisible,
+    !isTablet ? true : false
+  );
 
   const { darkTheme, setDarkTheme } = props;
+
+  useEffect(() => {
+    if (isMobile || isTablet) {
+      setLeftSidebarVisible(false);
+    } else if (!isMobile || !isTablet) {
+      setLeftSidebarVisible(true);
+    }
+  }, [isMobile, isTablet]);
+
+  useEffect(() => {
+    if (leftSidebarVisible && (isMobile || isTablet)) {
+      setIsScrollBlocked(true);
+    } else if (!leftSidebarVisible) {
+      setIsScrollBlocked(false);
+    }
+    return () => {
+      setIsScrollBlocked(false);
+    };
+  }, [leftSidebarVisible, isMobile, isTablet]);
 
   return (
     <nav
       className={
-        isMobile && !leftSidebarVisible
+        !leftSidebarVisible
           ? "left-sidebar left-sidebar_hidden"
           : "left-sidebar left-sidebar_visibled"
       }
@@ -83,7 +110,7 @@ const LeftSidebar = (props) => {
             }}
             activeClassName="left-sidebar__link_active"
             onClick={() => {
-              setLeftSidebarVisible(!leftSidebarVisible);
+              if (isMobile) setLeftSidebarVisible(!leftSidebarVisible);
               if (rightSideBarVisible) setRightSideBarVisible(false);
             }}
           >
@@ -99,7 +126,7 @@ const LeftSidebar = (props) => {
             }}
             activeClassName="left-sidebar__link_active"
             onClick={() => {
-              setLeftSidebarVisible(!leftSidebarVisible);
+              if (isMobile) setLeftSidebarVisible(!leftSidebarVisible);
               if (rightSideBarVisible) setRightSideBarVisible(false);
             }}
           >

@@ -10,6 +10,7 @@ import { useContext, useRef } from "react";
 import LoginModalContext from "../contexts/LoginModalContext";
 import { useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
+import useScrollBlocked from "../hooks/useScrollBlocked";
 
 const validationSchema = Yup.object().shape({
   login: Yup.string().email().required(),
@@ -64,25 +65,23 @@ const LoginModal = (props) => {
 
   const isMobile = useMediaQuery({ maxWidth: 768 });
 
+  const { setIsScrollBlocked } = useScrollBlocked({ isMobile });
+
   useEffect(() => {
     props.auth && setLoginVisible(false);
   }, [props.auth]);
 
   useEffect(() => {
-    const scrollbarWidth = window.innerWidth - document.body.offsetWidth;
-
-    if (loginVisible && !isMobile) {
-      document.body.style.overflowY = "hidden";
-      document.body.style.paddingRight = `${scrollbarWidth}px`;
-    } else if (loginVisible && isMobile) {
-      document.body.style.overflowY = "hidden";
+    if (loginVisible) {
+      setIsScrollBlocked(true);
+    } else if (!loginVisible) {
+      setIsScrollBlocked(false);
     }
 
     return () => {
-      document.body.style.overflowY = "";
-      document.body.style.paddingRight = "";
+      setIsScrollBlocked(false);
     };
-  }, [loginVisible, isMobile]);
+  }, [loginVisible]);
 
   const ref = useRef();
 
