@@ -111,7 +111,7 @@ const LeftSidebar = (props) => {
             activeClassName="left-sidebar__link_active"
             onClick={() => {
               if (isMobile) setLeftSidebarVisible(!leftSidebarVisible);
-              if (rightSideBarVisible) setRightSideBarVisible(false);
+              if (rightSideBarVisible && isMobile) setRightSideBarVisible(false);
             }}
           >
             <Zap className="left-sidebar__link-logo" />
@@ -127,7 +127,7 @@ const LeftSidebar = (props) => {
             activeClassName="left-sidebar__link_active"
             onClick={() => {
               if (isMobile) setLeftSidebarVisible(!leftSidebarVisible);
-              if (rightSideBarVisible) setRightSideBarVisible(false);
+              if (rightSideBarVisible && isMobile) setRightSideBarVisible(false);
             }}
           >
             <Clock className="left-sidebar__link-logo" />
